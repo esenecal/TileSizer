@@ -15,19 +15,18 @@ public class Tile { //Defining a tile
         this.camY = camY;
     }
 
+    //previous system wasn't working. Back to the drawing board.
     public void findXFactors() {   //A method for finding the factors of the camX value.
-            
-        /* Checking if the remainder of camX and factors is 0, meaning the value of factors is actually a factor.
-        the factors <= camX/2 part is to reduce work. Since factors work in pairs, the computer just has to find the lower factor and divide
-        camX by that factor to find the other. Then the factors are stuck in an array. Order doesn't matter, because when they're
-        checked with the factors of camY, the only the values of the array indicies are checked. */
-        for (int factors = 1; factors <= (camX/4); factors++) {
 
-            if ((camX % factors) == 0) {   
-                tileX.add(factors);
-                tileX.add(camX/factors);
-            }
+        int factors = 1;    
 
+        tileX.add(factors);         //This assigns 1 and the value of camX to tileX, because every number has 1 and itself as a factor.
+        tileX.add(camX/factors);
+        factors++;
+
+        if ((camX % factors) == 0) {   
+            tileX.add(factors);
+            tileX.add(camX/factors);
         }
 
     }
