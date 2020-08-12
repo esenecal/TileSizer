@@ -10,7 +10,10 @@ public class Tile { //Defining a tile
     private int camX;   //Camera dimensions in the Blender file. Used to calculate ideal tile sizes.
     private int camY;
 
-    //ArrayList<Integer> factors = new ArrayList<Integer>();
+    public void setCamDim(int camX, int camY) {
+        this.camX = camX;
+        this.camY = camY;
+    }
 
     public void findXFactors() {   //A method for finding the factors of the camX value.
             
@@ -18,7 +21,7 @@ public class Tile { //Defining a tile
         the factors <= camX/2 part is to reduce work. Since factors work in pairs, the computer just has to find the lower factor and divide
         camX by that factor to find the other. Then the factors are stuck in an array. Order doesn't matter, because when they're
         checked with the factors of camY, the only the values of the array indicies are checked. */
-        for (int factors = 1; factors <= (camX/2); factors++) {
+        for (int factors = 1; factors <= (camX/4); factors++) {
 
             if ((camX % factors) == 0) {   
                 tileX.add(factors);
@@ -42,10 +45,6 @@ public class Tile { //Defining a tile
     This is due to the idea that you enter in the camera dimensions and receive the tile dimensions. Later on a complete
     set of getter and setter methods may be added.
     */
-    public void setCamDim(int camX, int camY) {
-        this.camX = camX;
-        this.camY = camY;
-    }
 
 
 }
