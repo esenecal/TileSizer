@@ -17,33 +17,39 @@ public class Tile { //Defining a tile
 
     //previous system wasn't working. Back to the drawing board.
     public void findXFactors() {   //A method for finding the factors of the camX value.
+        int counter = 1;
+        int factors = 1;
 
-        int factors = 1;    
+        tileX.add(factors);
+        tileX.add(camX);
 
-        tileX.add(factors);         //This assigns 1 and the value of camX to tileX, because every number has 1 and itself as a factor.
-        tileX.add(camX/factors);
         factors++;
 
-        if ((camX % factors) == 0) {   
-            tileX.add(factors);
-            tileX.add(camX/factors);
+        while (factors < camX) {
+
+            if (factors == tileX.get(counter)) {
+                break;
+                
+            } else {
+
+                if (camX % factors == 0) {
+                    tileX.add(factors);
+                    tileX.add(camX/factors);
+                }
+
+                counter++;
+                factors++;
+
+            }
         }
+    }
+
+    public void findYfactors() {    //A method for finding the factors of the camY value.
 
     }
 
     public int getXFactors(int i) { //get an index of tileX.
         return tileX.get(i);
     }
-    
-    public void findYfactors() {    //A method for finding the factors of the camY value.
-
-    }
-
-    /*
-    There are currently no setter methods for the tile dimensions, or getter methods for the camera dimensions.
-    This is due to the idea that you enter in the camera dimensions and receive the tile dimensions. Later on a complete
-    set of getter and setter methods may be added.
-    */
-
 
 }

@@ -17,6 +17,7 @@ public class App {
 
         tile.findXFactors();
 
+
         
         try {   //try catch statements - instead of trying to find the length of an array, this just prints out the array until it is done.
 
