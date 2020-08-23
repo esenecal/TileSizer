@@ -1,4 +1,4 @@
-
+import static java.lang.System.out;
 /* 
 For Testing: Factors of 1920 are (in pairs):
 (1, 1920), (2, 960), (3, 640), (4, 480), (5, 384), (6, 320), (8, 240), (10, 192), 
@@ -16,24 +16,9 @@ public class App {
         tile.setCamDim(1920, 1080);
 
         tile.findXFactors();
-
-
         
-        try {   //try catch statements - instead of trying to find the length of an array, this just prints out the array until it is done.
-
-            int counter = 0;
-
-            for ( ; ; ) {
-                System.out.println(tile.getXFactors(counter));
-                counter++;
-            }
-
-        } catch (IndexOutOfBoundsException e) {
-
-            System.out.println();
-            
-        }
-
+        out.println(tile.getXFactors(0));
+        
     }
 
 }
