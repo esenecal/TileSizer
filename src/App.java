@@ -13,11 +13,16 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Tile tile = new Tile();
-        tile.setCamDim(1920, 1080);
+        tile.setCamDim(36, 1);
 
         tile.findXFactors();
         
-        out.println(tile.getXFactors(0));
+        // out.println(tile.getXFactors(0));
+        // out.println(tile.getXFactors(1));
+        // out.println(tile.getXFactors(2));
+        // out.println(tile.getXFactors(3));
+        // out.println(tile.getXFactors(4));
+        // out.println(tile.getXFactors(5));
         
     }
 
