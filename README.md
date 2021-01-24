@@ -11,3 +11,12 @@
  For this resolution, ideal tile sizes would be 1x1, 2x2, 8x8, and 16x16. You could then choose which tile size you wish to use based on your needs (small dimensions for cpu, large for gpu, etc.). Of course, 32x16 is not usually used, and so finding factors of larger numbers can be difficult. Naturally, I'm going to try to make the computer do the math for me.
  
  I would like to point out that I am neither a greatly experienced programmer or CG artist, and am self taught in both endeavors through the internet. My information about what tile sizes and properties work better for Blender may be incorrect, but are based off of what I have learned. So be aware.
+
+# Current To-Do
+ 
+
+# Update Log
+ Dates are in mm/dd/yyyy
+
+ 1/11/2021
+    I learned that finding prime numbers is a hard task for a computer. Since this project relies on prime factorization and finding the factors of a number, this could be an issue. If the numbers being used are very large, then it could make this impractical. So I might think about any other methods that may work. But so far, I'll keep working on it.

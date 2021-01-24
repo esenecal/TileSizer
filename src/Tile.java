@@ -16,33 +16,46 @@ public class Tile { //Defining a tile
     }
 
     //previous system wasn't working. Back to the drawing board.
-    public void findXFactors() {   //A method for finding the factors of the camX value.
 
-        int factor = 4;     //Factors to use to divide the camX by.
+    public void findXFactors() {        //A method for finding the factors of the camX value.
 
-        tileX.add(factor);  //We know the first two factors of camX - 1 and camX itself.
+        int factor = 1;     //Factors to use to divide the camX by.
+
+        tileX.add(factor);      //We know the first two factors of camX: 1 and camX itself.
         tileX.add(camX);
 
         factor++;           //increase factor by one (so it's 2).
 
-        int index = 1;      //Index - program checks if factor is equal to the tileX elements one and 2 before the current one.
-        
-        System.out.println((double)factor);                     //debugging - making sure that the remainder of camX and factor is a double.
-        System.out.println(((double)camX % (double)factor));
+        int index = 0;      //Index: program checks if factor is equal to the tileX elements one and 2 before the current one.
 
-        if (tileX.get(index) != factor || tileX.get(index-1) != factor) {
-            
-            if ((double)camX % (double)factor == 0) {
+        System.out.println(factor);
+        System.out.println(camX % factor);      //Finding the remainder of camX/factor.
+
+        // If the remainder of camX/factor is 0, then that means that factor is a factor of camX.
+    
+        tileX.add(factor);
+        tileX.add(camX/factor);
+
+        factor++;
+        index += 2;
+        
+        do {
+
+            if (camX % factor == 0) {
+
                 tileX.add(factor);
                 tileX.add(camX/factor);
                 
                 factor++;
-                index +=2;
+                index += 2;
+
             } else {
+
                 factor++;
-                index+=2;
+
             }
-        }
+
+        } while (tileX.get(index) != factor || tileX.get(index-1) != factor);
 
     }
 
